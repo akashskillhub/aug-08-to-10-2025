@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <input placeholder="enter task" id="task" type="text">
+    <input placeholder="enter desc" id="desc" type="text">
+    <button onclick="createNote()">add</button>
+
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Desc</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const NOTES = [
+            { task: "learn html", desc: "fake" },
+            { task: "learn css", desc: "fake" },
+            { task: "learn js", desc: "fake" },
+        ]
+        function createNote() {
+            const task = document.getElementById("task").value // john
+            const desc = document.getElementById("desc").value // doe
+            NOTES.push({ task, desc })
+            display()
+        }
+
+        function display() {
+            const body = document.getElementById("body")
+            body.innerHTML = ""
+            let i = 0
+            for (const item of NOTES) {
+                body.innerHTML += `<tr>
+                <td>${item.task}</td>
+                <td>${item.desc}</td>
+                <td> <button onclick="handleRemove(${i})">Remove ${i}</button>  </td>
+            </tr>`
+                i++
+            }
+        }
+
+        function handleRemove(index) {
+            NOTES.splice(index, 1)
+            display()
+
+        }
+
+        display()
+    </script>
+</body>
+
+</html>

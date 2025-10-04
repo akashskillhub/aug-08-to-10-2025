@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="root"></h1>
+    <input id="fname" type="text" placeholder="enter first name">
+    <input id="lname" type="text" placeholder="enter last name">
+    <button onclick="handleClick()">click me</button>
+
+    <script>
+        function handleClick() {
+            const fname = document.getElementById("fname")
+            const lname = document.getElementById("lname")
+            const root = document.getElementById("root")
+            root.innerHTML = fname.value + lname.value
+        }
+    </script>
+</body>
+
+</html>

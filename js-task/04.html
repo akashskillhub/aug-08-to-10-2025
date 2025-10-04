@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            # 📝 Problem: Ask the user for a year and check if it is a leap year.
+            # Rule: A leap year is divisible by 4 but not by 100, OR divisible by 400.
+            # Expected Input: 2020 → Expected Output: "Leap Year"
+            # Expected Input: 1900 → Expected Output: "Not Leap Year"
+        */
+
+        year = 2025
+
+        // 👉 Your code here
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+            console.log("leap")
+        } else {
+            console.log("noyt leap")
+        }
+    </script>
+</body>
+
+</html>

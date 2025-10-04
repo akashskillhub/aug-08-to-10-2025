@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <style>
+        .seat {
+            height: 100px;
+            width: 50px;
+            border: 2px solid gray;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4">
+
+                <div id="root"></div>
+
+                <div class="card">
+                    <div class="card-header">Bus Booking</div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="seat" id="s-1"></div>
+                            <div class="d-flex">
+                                <div class="seat" id="s-2"></div>
+                                <div class="seat" id="s-3"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="seat" id="s-4"></div>
+                            <div class="d-flex">
+                                <div class="seat" id="s-5"></div>
+                                <div class="seat" id="s-6"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const PRICE = 500
+        const seats = document.getElementsByClassName("seat")
+
+
+
+
+        for (const item of seats) {
+            item.addEventListener("click", function () {
+                item.classList.toggle("bg-success")
+                const selectedSeats = document.getElementsByClassName("bg-success")
+                console.clear()
+                const COST = selectedSeats.length * PRICE
+                const GST = 18
+                const TAX = COST * GST / 100
+                const TOTAL = COST + TAX
+                console.log(`Bill: ${COST} Tax: ${TAX} Total: ${TOTAL}`);
+
+                let str = ""
+                for (const s of selectedSeats) {
+                    str += s.id + " "
+                }
+                console.log(`you have selected ${str} seats`)
+
+                document.getElementById("root").innerHTML = `<div class="alert alert-success">
+                       <p> Bill: ${COST} Tax: ${TAX} Total: ${TOTAL} </p>
+                       <p> you have selected ${str} seats </p>
+                    </div>`
+
+            })
+        }
+
+        // ES6
+        // arrow function
+        // array and object destructuring
+        // rest and spread oprator
+        // promises
+
+    </script>
+</body>
+
+</html>

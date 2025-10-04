@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // var x   declearation
+        // x = 20  initialization
+        // var x = 10
+        // var x = 100
+
+        // let y = 50
+        // let y = 500 // error can not redeclare
+        // const z = 10
+        // const z = 10 // error can not redeclare
+
+        /*
+               
+                    redeclaration  reinitialization   initialization    TDZ     scope
+            var         yes            yes             not mandatory    no      functional
+            let         no             yes             not mandatory    yes     block
+            const       no             no              mandatory        yes     block
+        
+        */
+
+        //  reinitialization
+        // var x = 10
+        // x = 20
+
+        // let y = 10
+        // y = 20
+
+        // const z = 10
+        // z = 20 // error
+        // console.log(x, y, z)
+
+        // initialization
+        // var x
+        // let y
+        // const z // error
+
+        // Temporal Dead Zone (TDZ)
+
+        // Hoisting
+        // var x
+        // let y
+        // console.log(x)
+        // var x = 10
+
+        // console.log(y) // ERROR due to TDZ
+        // let y = 10
+
+        // console.log(z) // ERROR due to TDZ
+        // const z = 10
+
+        // scope
+
+        function test() {
+            var x = 10
+            let y = 10
+            const z = 10
+            if (true) {
+                console.log(x, y, x) // closure
+
+                var p = 20 // functional scope
+                let q = 20 // block scope
+                const r = 20 // block scope
+            }
+
+            // console.log("p", p)
+            // console.log("q", q) // error
+            // console.log("r", r) // error
+        }
+
+        console.log("x", x) // error
+        console.log("y", y) // error
+        console.log("z", z) // error
+
+
+        test()
+
+
+
+    </script>
+</body>
+
+</html>

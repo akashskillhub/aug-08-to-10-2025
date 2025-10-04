@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const arr1 = ["dell", "hp"]
+        const x = [...arr1] // shalow copy
+        x[0] = "apple"
+        console.log(x)
+        console.log(arr1)
+        // X00
+        const arr = [
+            { name: "ross" }, // X12
+            { name: "kate" }, // X45
+        ]
+        const y = [...arr] // shalow copy // [X12, X45]
+        y[0].name = "ethan"
+        console.log(y)
+        console.log(arr)
+
+        // deep copy
+        // const res = JSON.stringify(arr)
+        // const z = JSON.parse(res)
+        // const z = JSON.parse(JSON.stringify(arr))
+        const z = structuredClone(arr)
+        z[0].name = "bill"
+        console.log(z)
+        console.log(arr)
+
+
+
+
+
+
+        // premitive        string number boolean
+        // nonpremitive     array object function classes
+    </script>
+</body>
+
+</html>

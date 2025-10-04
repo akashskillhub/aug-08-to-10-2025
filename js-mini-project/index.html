@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    | <!-- task -->
+    <!-- priority -->
+    <!-- desc -->
+    <!-- date -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="card">
+                    <div class="card-header">Task Manager</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="task" placeholder="Enter Task">
+                                    <label for="task">Enter Task</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="priority">
+                                        <option value="" selected>Choose Priority</option>
+                                        <option value="high">high</option>
+                                        <option value="medium">medium</option>
+                                        <option value="low">low</option>
+                                    </select>
+                                    <label for="priority">Choose Priority</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="desc" placeholder="Enter Description">
+                                    <label for="desc">Enter Desciption</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="date"
+                                        placeholder="Enter Completion Date">
+                                    <label for="date">Enter Completion Date</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="create-btn" type="button" class="btn btn-primary w-100">Add Task</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="card">
+                    <div class="card-header">Budget Planner</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="title" placeholder="enter title">
+                                    <label for="title">Enter Title</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="amount" placeholder="enter amount">
+                                    <label for="amount">Enter Amount</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="type">
+                                        <option selected>Choose Type</option>
+                                        <option value="income">Income</option>
+                                        <option value="expense">Expense</option>
+                                    </select>
+                                    <label for="type">Enter type</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="category">
+                                        <option selected>Choose Category</option>
+                                        <option value="food">Food</option>
+                                        <option value="transport">Transport</option>
+                                        <option value="rent">Rent</option>
+                                        <option value="salary">Salary</option>
+                                        <option value="investment">Investment</option>
+                                    </select>
+                                    <label for="category">Enter Category</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="note" placeholder="enter note">
+                                    <label for="note">Enter Note</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="handleClick()" type="button" class="btn btn-primary w-100 btn-lg">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="progress mb-3">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" id="rent">
+                                Rent</div>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="food">
+                                Food</div>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                id="transport">Transport
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-body text-success">
+                                        <strong>Income</strong>
+                                        <h4 id="income">00</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-body text-danger">
+                                        <strong>Expense</strong>
+                                        <h4 id="expense">00</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-body text-success">
+                                        <strong>Balance</strong>
+                                        <h4 id="balance">00</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <table class="table table-dark table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody id="root">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const title = document.getElementById("title")
+        const amount = document.getElementById("amount")
+        const type = document.getElementById("type")
+        const category = document.getElementById("category")
+        const note = document.getElementById("note")
+        const BANK = [
+            { note: "fake note", title: "job 1", amount: 25000, type: "income", category: "salary" },
+            { note: "fake note", title: "bike petrol", amount: 1500, type: "expense", category: "transport" },
+            { note: "fake note", title: "pizza", amount: 500, type: "expense", category: "food" },
+            { note: "fake note", title: "test", amount: 500, type: "expense", category: "food" },
+            { note: "fake note", title: "stocks", amount: 5000, type: "income", category: "investments" },
+            { note: "fake note", title: "house rent", amount: 5000, type: "expense", category: "rent" },
+        ]
+        function handleClick() {
+            const data = {
+                title: title.value,
+                amount: +amount.value,
+                type: type.value,
+                category: category.value,
+                note: note.value,
+            }
+            BANK.unshift(data)
+            display()
+        }
+
+        function display() {
+            const root = document.getElementById('root')
+            root.innerHTML = ""
+            let i = 1
+            for (const item of BANK) {
+                root.innerHTML += `
+                    <tr>
+                        <td>${i}</td>
+                        <td>${item.title}</td>
+                        <td>${item.amount}</td>
+                        <td>${item.type}</td>
+                        <td>${item.category}</td>
+                        <td>${item.note}</td>
+                    </tr>
+                `
+                i++
+            }
+            const INC = BANK
+                .filter(function (item) {
+                    return item.type === "income"
+                }).reduce(function (sum, item) {
+                    return sum + item.amount
+                }, 0)
+
+            const EXP = BANK
+                .filter(function (item) {
+                    return item.type === "expense"
+                }).reduce(function (sum, item) {
+                    return sum + item.amount
+                }, 0)
+
+            document.getElementById("income").innerHTML = INC
+            document.getElementById("expense").innerHTML = EXP
+            document.getElementById("balance").innerHTML = INC - EXP
+
+            const FOOD = BANK
+                .filter(function (item) {
+                    return item.category === "food"
+                }).reduce(function (sum, item) {
+                    return sum + item.amount
+                }, 0) / EXP * 100
+
+            const RENT = BANK
+                .filter(function (item) {
+                    return item.category === "rent"
+                }).reduce(function (sum, item) {
+                    return sum + item.amount
+                }, 0) / EXP * 100
+
+            const TRANSPORT = BANK
+                .filter(function (item) {
+                    return item.category === "transport"
+                }).reduce(function (sum, item) {
+                    return sum + item.amount
+                }, 0) / EXP * 100
+
+            document.getElementById("rent").style.width = `${RENT}%`
+            document.getElementById("rent").innerHTML = `R ${Math.floor(RENT)}%`
+
+            document.getElementById("food").style.width = `${FOOD}%`
+            document.getElementById("food").innerHTML = `F ${Math.floor(FOOD)}%`
+
+            document.getElementById("transport").style.width = `${TRANSPORT}%`
+            document.getElementById("transport").innerHTML = `T ${Math.floor(TRANSPORT)}%`
+
+        }
+
+        display()
+        // array methods => map, filter, reduce, find, findIndex
+        // Local Storage, Session Storage, Cookies
+
+    </script>
+</body>
+
+</html>

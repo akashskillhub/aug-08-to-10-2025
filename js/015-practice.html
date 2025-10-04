@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, 3]
+
+        function demo(arg, arg1) {
+            // arg = 2
+            // arg1 = 15
+            // [1,2,15,5,10]
+            arr.splice(2, 1, 15)
+            return arr
+        }
+
+        function test(x, y) {
+            arr.push(x) // [1,2,3,5]
+            arr.push(y) //[1,2,3,5,10]
+            return demo(2, x + y) //
+        }
+        const result = test(5, 10)
+        console.log(result)
+
+        // conditions
+        // premitive non premitive
+        // DOM
+
+    </script>
+</body>
+
+</html>

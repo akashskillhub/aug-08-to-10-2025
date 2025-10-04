@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            color: red;
+        }
+
+        .test {
+            border: 2px solid red;
+        }
+
+        #demo {
+            color: blue;
+        }
+
+
+        /* specificity */
+        h2 {
+            color: red;
+        }
+
+        .dummy {
+            color: blue;
+        }
+
+        #desc {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="test">Lorem ipsum dolor sit amet.</h1>
+    <h1 class="title">Lorem, ipsum dolor.</h1>
+    <h1 id="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, amet!</h1>
+    <!-- <h2 class="dummy"></h2> -->
+
+    <h2 class="dummy" id="desc">
+        Lorem ipsum dolor sit amet.
+    </h2>
+</body>
+
+</html>

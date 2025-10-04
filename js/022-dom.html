@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header" id="title">header</div>
+        <div class="card-body" id="body">body</div>
+        <div class="card-footer">footer</div>
+    </div>
+
+    <button onclick="test()">click me</button>
+    <script>
+
+
+        function test() {
+            // console.log(document)
+            // console.log(document.getElementById("title"))
+            // console.log("hello")
+            // console.log(title.innerHTML) // GETTER
+            const title = document.getElementById("title")
+            title.innerHTML = "Hello js" // setter
+
+            const body = document.getElementById("body")
+            body.innerHTML = "dell"
+        }
+    </script>
+</body>
+
+</html>

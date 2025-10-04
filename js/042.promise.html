@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // synchronuse
+        // asynchronuse
+
+        const x = new Promise((resolve, reject) => {
+            // line of code...
+            // reject("network error") // fail
+            resolve("complete") // success
+        })
+
+        x
+            .then((data) => console.log("success", data))
+            .catch((err) => console.log("Fail", err))
+
+        const test = async () => {
+            try {
+                const data = await x
+                console.log("done", data)
+            } catch (error) {
+                console.log("FAIL", error)
+            }
+        }
+        test()
+    </script>
+</body>
+
+</html>

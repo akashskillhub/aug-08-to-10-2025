@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            div>p           child selector
+            div p           decendant selector
+            div+p           adjeacent sibling selector
+            div~p           all sibling selector
+        */
+
+        div~p {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>para 1</p>
+        <p>para 2</p>
+        <section>
+            <p>inside para </p>
+        </section>
+    </div>
+    <p>para 3</p>
+    <p>para 4</p>
+
+    <hr>
+
+    <div class="dummy">
+        <h1 class="test"></h1>
+        <h1 class="test"></h1>
+        <h1 class="test"></h1>
+        <h1 class="test"></h1>
+    </div>
+    <div class="card">
+        <div class="header"></div>
+        <div class="body"></div>
+        <div class="footer"></div>
+    </div>
+
+    <div class="modal">
+        <div class="modal-dailog">
+            <div class="modal-header"></div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

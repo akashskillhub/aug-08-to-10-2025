@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 2px solid green;
+            margin-bottom: 50px;
+            transition: 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="demo"></div>
+
+    <h1 id="title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat labore veniam molestiae sed debitis reiciendis,
+        quisquam cumque quia incidunt beatae neque temporibus sequi earum delectus itaque. Ea qui optio odio.
+    </h1>
+    <button onclick="handleClick()">click me</button>
+    <script>
+        function handleClick() {
+            const title = document.getElementById("title")
+            title.style.color = "blue"
+            title.style.backgroundColor = "red"
+
+            const box = document.getElementById("demo")
+            box.style.marginLeft = "200px"
+        }
+    </script>
+</body>
+
+</html>

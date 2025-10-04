@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //           👇rest oprator
+        const sum = (...n) => n.reduce((sum, item) => sum + item, 0)
+        const result = sum(10, 20)
+        const result1 = sum(10, 20, 30)
+        console.log(result)
+        console.log(result1)
+
+        const arr = [10, 20, 30]
+        //        👇rest oprator
+        const [x, ...y] = arr
+        console.log(x, y)
+
+        console.clear()
+        const obj = { name: "ross", age: 20, city: "london" }
+        //            👇 rest
+        const { name, ...z } = obj
+        console.log(name)
+        console.log(z)
+
+        console.clear()
+
+        const brands = ["dell", "hp", "apple"]
+        // console.log(brands)
+        // console.log(...brands)
+
+        // const p = [brands] // [["dell", "hp", "apple"]]
+        //         👇spread
+        const p = [...brands] // ["dell", "hp", "apple"]
+        console.table(p)
+        console.clear()
+
+        const stud = { name: "ross", age: 20, city: "london" }
+        //          👇spread
+        const q = { ...stud } // shalow copy
+        q.name = "ethan"
+        console.log(q)
+        console.log(stud)
+        // ethan
+
+
+
+
+
+    </script>
+</body>
+
+</html>

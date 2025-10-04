@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const PRODUCTS = [
+            { id: 1, name: "laptop", price: 45000, qty: 1, inStock: true },
+            { id: 2, name: "mobile", price: 5000, qty: 2, inStock: false },
+            { id: 3, name: "keyboard", price: 400, qty: 10, inStock: true },
+            { id: 4, name: "mouse", price: 500, qty: 5, inStock: true },
+        ]
+
+        // const result = PRODUCTS.filter(function (item) {
+        //     return item.inStock === true
+        // })
+        // const x = result.map(function (item) {
+        //     return item.name
+        // })
+        // console.log(result)
+        // console.log(x)
+
+
+        // chaning
+        const result = PRODUCTS
+            .filter(function (item) {
+                return item.price < 10000 && item.inStock === true
+            }).reduce(function (sum, item) {
+                return sum + item.qty
+            }, 0)
+        console.log(result)
+
+
+        const BANK = [
+            { title: "job 1", amount: 25000, type: "income", category: "salary" },
+            { title: "bike petrol", amount: 500, type: "expense", category: "transport" },
+            { title: "pizza", amount: 500, type: "expense", category: "food" },
+            { title: "test", amount: 500, type: "expense", category: "food" },
+            { title: "stocks", amount: 5000, type: "income", category: "investments" },
+            { title: "house rent", amount: 8500, type: "expense", category: "rent" },
+        ]
+        // 30000
+        const income = BANK
+            .filter(function (item) {
+                return item.type === "income"
+            }).reduce(function (sum, item) {
+                return sum + item.amount
+            }, 0)
+
+        // 10000
+        const expense = BANK
+            .filter(function (item) {
+                return item.type === "expense"
+            }).reduce(function (sum, item) {
+                return sum + item.amount
+            }, 0)
+
+        console.log("income ", income)
+        console.log("expense ", expense)
+        console.log("balance ", income - expense)
+
+        const food = BANK
+            .filter(function (item) {
+                return item.category === "food"
+            }).reduce(function (sum, item) {
+                return sum + item.amount
+            }, 0) / expense * 100
+
+        const rent = BANK
+            .filter(function (item) {
+                return item.category === "rent"
+            }).reduce(function (sum, item) {
+                return sum + item.amount
+            }, 0) / expense * 100
+
+        const transport = BANK
+            .filter(function (item) {
+                return item.category === "transport"
+            }).reduce(function (sum, item) {
+                return sum + item.amount
+            }, 0) / expense * 100
+
+        console.log(food)
+        console.log(rent)
+        console.log(transport)
+
+
+    </script>
+</body>
+
+</html>

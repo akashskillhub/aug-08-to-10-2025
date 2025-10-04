@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="card">
+                    <div class="card-header">Red Bus Lite</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <select class="form-select" id="from">
+                                <option selected>From City</option>
+                                <option value="Aurangabad">Aurangabad</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Nagpur">Nagpur</option>
+                            </select>
+
+                            <select class="form-select" id="to">
+                                <option selected>To City</option>
+                                <option value="Aurangabad">Aurangabad</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Nagpur">Nagpur</option>
+                            </select>
+                            <button onclick="handleSearch()" type="button" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-none" id="filter">
+                    <p>Filter</p>
+                    <button type="button" class="btn btn-outline-primary">AC</button>
+                    <button type="button" class="btn btn-outline-primary">Non-AC</button>
+                    <button type="button" class="btn btn-outline-primary">Sleeper</button>
+                    <button type="button" class="btn btn-outline-primary">Seater</button>
+                </div>
+
+                <div id="root" class="my-5">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const from = document.getElementById("from")
+        const to = document.getElementById("to")
+        const BUSES = [
+            // Pune ↔ Mumbai
+            { id: 1, name: "Shreyash", price: 500, from: "Pune", to: "Mumbai", features: ["ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,travel" },
+            { id: 2, name: "Neeta", price: 650, from: "Pune", to: "Mumbai", features: ["ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,coach" },
+            { id: 3, name: "VRL", price: 700, from: "Mumbai", to: "Pune", features: ["non-ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,india" },
+            { id: 4, name: "Orange", price: 850, from: "Mumbai", to: "Pune", features: ["ac", "luxury"], image: "https://source.unsplash.com/600x400/?bus,luxury" },
+
+            // Pune ↔ Aurangabad
+            { id: 5, name: "Raj Travels", price: 600, from: "Pune", to: "Aurangabad", features: ["non-ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,express" },
+            { id: 6, name: "Hans", price: 750, from: "Pune", to: "Aurangabad", features: ["ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,vehicle" },
+            { id: 7, name: "Mahasagar", price: 500, from: "Aurangabad", to: "Pune", features: ["non-ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,transport" },
+            { id: 8, name: "Sharma", price: 550, from: "Aurangabad", to: "Pune", features: ["ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,street" },
+
+            // Pune ↔ Nagpur
+            { id: 9, name: "Paulo", price: 1100, from: "Pune", to: "Nagpur", features: ["ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,night" },
+            { id: 10, name: "Morning Star", price: 950, from: "Pune", to: "Nagpur", features: ["ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,modern" },
+            { id: 11, name: "GreenLine", price: 1200, from: "Nagpur", to: "Pune", features: ["ac", "luxury"], image: "https://source.unsplash.com/600x400/?green,bus" },
+            { id: 12, name: "Megha", price: 900, from: "Nagpur", to: "Pune", features: ["ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,comfort" },
+
+            // Mumbai ↔ Aurangabad
+            { id: 13, name: "Kaveri", price: 950, from: "Mumbai", to: "Aurangabad", features: ["ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,journey" },
+            { id: 14, name: "Jabbar", price: 600, from: "Mumbai", to: "Aurangabad", features: ["ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,roadtrip" },
+            { id: 15, name: "KPN", price: 1000, from: "Aurangabad", to: "Mumbai", features: ["ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,modern,coach" },
+            { id: 16, name: "CityLink", price: 550, from: "Aurangabad", to: "Mumbai", features: ["non-ac", "seater"], image: "https://source.unsplash.com/600x400/?city,bus" },
+
+            // Mumbai ↔ Nagpur
+            { id: 17, name: "Patel", price: 1000, from: "Mumbai", to: "Nagpur", features: ["ac", "luxury"], image: "https://source.unsplash.com/600x400/?luxury,bus" },
+            { id: 18, name: "Yatra", price: 1200, from: "Mumbai", to: "Nagpur", features: ["ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,traveling" },
+            { id: 19, name: "Intercity", price: 850, from: "Nagpur", to: "Mumbai", features: ["ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,city" },
+            { id: 20, name: "Royal", price: 950, from: "Nagpur", to: "Mumbai", features: ["ac", "luxury"], image: "https://source.unsplash.com/600x400/?royal,bus" },
+
+            // Aurangabad ↔ Nagpur
+            { id: 21, name: "KSRTC", price: 700, from: "Aurangabad", to: "Nagpur", features: ["ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,road" },
+            { id: 22, name: "Manish Travels", price: 800, from: "Aurangabad", to: "Nagpur", features: ["ac", "sleeper"], image: "https://source.unsplash.com/600x400/?bus,indian" },
+            { id: 23, name: "National", price: 950, from: "Nagpur", to: "Aurangabad", features: ["ac", "luxury"], image: "https://source.unsplash.com/600x400/?national,bus" },
+            { id: 24, name: "Shatabdi", price: 650, from: "Nagpur", to: "Aurangabad", features: ["non-ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,classic" },
+
+            // Extra Pune ↔ Mumbai (very popular route)
+            { id: 25, name: "SRS", price: 600, from: "Pune", to: "Mumbai", features: ["ac", "seater"], image: "https://source.unsplash.com/600x400/?bus,passenger" }
+        ];
+
+        // 1 bus search
+        // 2 seat availabilty
+        // 3 ticket rates
+        // 4 bus features 
+
+        function handleSearch() {
+            const result = BUSES.filter(function (item) {
+                return item.from === from.value && item.to === to.value
+            })
+            display(result)
+        }
+
+        function display(data) {
+            const root = document.getElementById("root")
+            root.innerHTML = ""
+            for (const item of data) {
+                let str = ''
+                for (const fe of item.features) {
+                    str += `<span class="badge text-bg-primary">${fe}</span>`
+                }
+                root.innerHTML += `
+                         <div class="card my-3">
+                        <div class="card-body">
+                            <img src="https://plus.unsplash.com/premium_photo-1664302152991-d013ff125f3f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                height="100" alt="">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6>${item.name}</h6>
+                                <h6>${item.price}</h6>
+                            </div>
+                        ${str}
+                        </div>
+                    </div>
+                `
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

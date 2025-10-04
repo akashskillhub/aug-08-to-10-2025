@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, 3, 4, 5]
+        // map -> data transform
+        // const x = arr.map(test)
+        // function test(item) {
+        //     return item + item
+        // }
+
+        const x = arr.map(function (item) {
+            return item + item
+        })
+        console.log(x)
+        console.log(arr)
+
+        console.clear()
+        // filter
+        const y = arr.filter(function (item) {
+            return item < 3
+        })
+        console.log(y)
+        console.log(arr)
+
+        console.clear()
+        // reduce -> reduce to single value
+
+        let sum = 0
+        for (const item of arr) {
+            sum += item
+        }
+        console.warn(sum)
+
+
+        const z = arr.reduce(function (sum, item) {
+            return sum + item
+        }, 0)
+        console.log(z)
+        console.log(arr)
+
+        console.clear()
+        const p = arr.findIndex(function (item) {
+            return item === 30
+        })
+        console.log(p)
+
+        console.clear()
+        const q = arr.includes(50)
+        console.log(q)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

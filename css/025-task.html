@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: rgb(5, 3, 28);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(13, 7, 79);
+            padding: 10px;
+            color: white;
+        }
+
+        .header>img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .contact {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .contact h6 {
+            font-size: 18px;
+        }
+
+        .contact p {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .contact>img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        body {
+            display: flex;
+        }
+
+        .wrapper {
+            background-color: gray;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .message {
+            background-color: blue;
+            flex: 1;
+        }
+
+        .footer {
+            background-color: green;
+        }
+
+        .profile {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            height: 70px;
+            /* padding: 0 20px; */
+        }
+
+        .profile>img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- sidebar start -->
+    <div class="sidebar">
+        <div class="header">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <i class="bi bi-house"></i>
+            <i class="bi bi-house"></i>
+            <i class="bi bi-house"></i>
+            <i class="bi bi-house"></i>
+            <i class="bi bi-house"></i>
+        </div>
+        <!-- contact start -->
+        <div class="contact">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <div>
+                <h6>John Doe</h6>
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+        <div class="contact">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <div>
+                <h6>John Doe</h6>
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+        <!-- contact end -->
+    </div>
+    <!-- sidebar end -->
+
+    <!-- message start -->
+    <div class="wrapper">
+        <div class="navbar">
+            <div class="profile">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <div>
+                    <h6>John</h6>
+                    <p>Lorem, ipsum dolor.</p>
+                </div>
+            </div>
+            <div>
+                <i class="bi bi-search"></i>
+                <i class="bi bi-search"></i>
+            </div>
+        </div>
+        <div class="message">message</div>
+        <div class="footer">footer</div>
+    </div>
+    <!-- message end -->
+</body>
+
+</html>

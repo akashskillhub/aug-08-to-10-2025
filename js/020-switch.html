@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const num = 4
+        // if (num % 2 === 0) {
+        //     console.log("even")
+        // } else {
+        //     console.log("odd")
+        // }
+
+        switch (true) {
+            case num % 2 === 0: console.log("even"); break
+            default: console.log("odd")
+        }
+
+        console.clear()
+
+        let x = 10, y = 20, z = 30
+        if (x > y && x > z) {
+            console.log("large ", x);
+        } else if (y > x && y > z) {
+            console.log("large ", y)
+        } else {
+            console.log("large ", z)
+        }
+
+        switch (true) {
+            case x > y && x > z: console.warn("large is x ", x); break;
+            case y > x && y > z: console.warn("large is y ", y); break;
+            default: console.warn("large is z ", z); break;
+        }
+
+        console.clear()
+
+        const d = 1
+        // 1 mon
+        // 2 tue
+        // 3 wed
+        // 4 thu
+        // 5 fri
+        // 6 sat
+        // 7 sun
+        // any other number => invalid day
+        if (d === 1) {
+            console.log("mon")
+        } else if (d === 2) {
+            console.log("tue")
+        } else if (d === 3) {
+            console.log("wed")
+        } else if (d === 4) {
+            console.log("thu")
+        } else if (d === 5) {
+            console.log("fri")
+        } else if (d === 6) {
+            console.log("sat")
+        } else if (d === 7) {
+            console.log("sun")
+        } else {
+            console.log("invalid day")
+        }
+
+        switch (d) {
+            case 1: console.warn("mon"); break;
+            case 2: console.warn("tue"); break;
+            case 3: console.warn("wed"); break;
+            case 4: console.warn("thu"); break;
+            case 5: console.warn("fri"); break;
+            case 6: console.warn("sat"); break;
+            case 7: console.warn("sun"); break;
+            default: console.error("invalid day"); break;
+        }
+    </script>
+</body>
+
+</html>

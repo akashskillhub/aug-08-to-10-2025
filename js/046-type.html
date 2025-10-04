@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- inline JS -->
+    <button onclick="console.log('clicked')">clik</button>
+    <button onclick="test()">clik</button>
+
+    <script>
+        // Internal JS
+        const test = () => {
+            console.log('test called');
+        }
+    </script>
+    <!-- External JS -->
+    <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="card">
+                    <div class="card-header">Weather App</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Enter city name" id="city">
+                            <button class="btn btn-outline-primary" onclick="handleWeather()">Check Weather</button>
+                            <button class="btn btn-outline-primary" onclick="handleAsyncWeather()">Async
+                                Weather</button>
+                        </div>
+                        <div id="root"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const API_KEY = "3dea525bd734a6c4f89ab2fb9e025109"
+        const handleWeather = () => {
+            const city = document.getElementById("city")
+            const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${API_KEY}`
+            fetch(URL)
+                .then(res => res.json())
+                .then(data => display(data))
+                .catch(err => console.log(err))
+        }
+        const handleAsyncWeather = async () => {
+            try {
+                const city = document.getElementById("city")
+                const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${API_KEY}`
+                const res = await fetch(URL)
+                const data = await res.json()
+                display(data)
+            } catch (err) {
+                console.log(err)
+            }
+
+        }
+
+        const display = data => {
+            const root = document.getElementById('root')
+            const weather = {
+                temp: (data.main.temp - 273.15).toFixed(2),
+                sunrise: new Date(data.sys.sunrise),
+                sunset: new Date(data.sys.sunset),
+                main: data.weather[0].main,
+            }
+            root.innerHTML = `
+                <div class="alert alert-success">
+                    <div>Temp ${weather.temp}<sup>o</sup> C</div>    
+                    <div>Sunrise ${weather.sunrise}</div>    
+                    <div>Sunset ${weather.sunset}</div>    
+                    <div>Main ${weather.main}</div>    
+                </div>
+            `
+        }
+        // js modules
+    </script>
+</body>
+
+</html>

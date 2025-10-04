@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x = 10
+        let y = x
+        y = 500
+        console.log(y)
+        console.log(x)
+
+        const arr = ["dell", "hp"]
+        const arr1 = arr
+        arr1.push("lenovo")
+        console.log(arr1)
+        console.log(arr)
+
+        console.clear()
+        const obj = { name: "roos", age: 20 }
+        const obj1 = obj // Not A Copy
+        obj1.name = "ethaN"
+        console.log(obj1)
+        console.log(obj)
+
+        console.clear()
+
+        function demo() {
+            return "dell"
+        }
+        console.log(demo) // entire functionc / function refrnace  
+        console.log(demo()) // return value of function
+
+        console.clear()
+
+        // arg => callback
+        // dummy => higher order function
+        function dummy(arg) {
+            return arg()
+        }
+
+        function test() {
+            return 10
+        }
+        const res = dummy(test)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="root"></h1>
+    <input type="number" placeholder="enter first number" id="n1">
+    <input type="number" placeholder="enter second number" id="n2">
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mul()">*</button>
+    <button onclick="div()">/</button>
+    <script>
+        const num1 = document.getElementById("n1")
+        const num2 = document.getElementById("n2")
+
+        function add() {
+            const sum = +num1.value + +num2.value
+            const root = document.getElementById("root")
+            root.innerHTML = "Addition =" + sum
+        }
+        function sub() {
+            const sum = +num1.value - +num2.value
+            const root = document.getElementById("root")
+            root.innerHTML = "sub =" + sum
+        }
+        function mul() {
+            const sum = +num1.value * +num2.value
+            const root = document.getElementById("root")
+            root.innerHTML = "mul =" + sum
+        }
+        function div() {
+            const sum = +num1.value / +num2.value
+            const root = document.getElementById("root")
+            root.innerHTML = "div =" + sum
+        }
+    </script>
+</body>
+
+</html>

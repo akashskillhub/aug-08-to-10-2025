@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="title">hello</h1>
+    <button onclick="handleAdd()" type="button" class="btn btn-primary">add</button>
+    <button onclick="handleRemove()" type="button" class="btn btn-primary">remove</button>
+    <button onclick="handleToggle()" type="button" class="btn btn-primary">toggle</button>
+    <button onclick="handleCheck()" type="button" class="btn btn-primary">check</button>
+
+    <script>
+        const title = document.getElementById("title")
+
+        function handleAdd() {
+            title.classList.add("bg-danger", "text-light")
+        }
+        function handleRemove() {
+            title.classList.remove("bg-danger", "text-light")
+        }
+        function handleToggle() {
+            title.classList.toggle("bg-success")
+        }
+        function handleCheck() {
+            const x = title.classList.contains("bg-success")
+            console.log(x)
+
+
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

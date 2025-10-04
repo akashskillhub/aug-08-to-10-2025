@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = { name: "ross", age: 20, city: "london" }
+        const { name, age, x } = obj
+        console.log(x)
+
+        // const name = obj.name
+        // const age = obj.age
+
+        console.clear()
+
+        const useSelector = () => {
+            return { user: "admin", active: true }
+        }
+        const { User } = useSelector() //{ user: "admin", active: true }
+        console.log(User)
+        console.clear()
+
+        const stud = { fname: "john", age: 20 }
+        //          👇rename
+        const { fname: p } = stud
+        console.log(p)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            # 03. Grading System
+            # Input: 85 → Output: Grade A
+            # Input: 45 → Output: Fail
+            # TODO: print grade A above 75/ B between 60-75 / C between 35-60 / Fail below 35
+            
+            
+        */
+
+        marks = 45
+        // 👉 Your code here
+        if (marks < 35) {
+            console.log("fail");
+        } else if (marks >= 35 && marks < 60) {
+            console.log("c");
+        } else if (marks >= 60 && marks < 75) {
+            console.log("B");
+        } else if (marks >= 75) {
+            console.log("A")
+        }
+    </script>
+</body>
+
+</html>

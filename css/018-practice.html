@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 100px;
+            height: 60px;
+            align-items: center;
+            color: white;
+        }
+
+        .btn {
+            display: none;
+        }
+
+        @media(max-width:800px) {
+            .btn {
+                display: block;
+            }
+
+            .test {
+                display: none;
+            }
+
+            .box {
+                flex-direction: column;
+            }
+        }
+
+        .box {
+            display: flex;
+
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-wrap: nowrap;
+
+            height: 200px;
+            background-color: gray;
+        }
+
+        .box1 {
+            background-color: green;
+            flex: 1;
+        }
+
+        .box2 {
+            background-color: blue;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div>SKILLHUB</div>
+        <div class="test">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+        <div class="test">
+            9988776655
+        </div>
+
+        <button class="btn">Menu</button>
+    </div>
+
+    <div class="box">
+        <div class="box1">box 1</div>
+        <div class="box2">box 2</div>
+    </div>
+</body>
+
+</html>

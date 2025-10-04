@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            # Task: Electricity charges:
+            # - Up to 100 units → ₹5/unit
+            # - 101-200 → ₹7/unit
+            # - Above 200 → ₹10/unit
+            # Expected Input: 50 → Expected Output: ₹250
+            # Expected Input: 150 → Expected Output: ₹850
+        */
+        let units = 150
+        //  👉 Your code here
+
+        let bill = 0
+        if (units <= 100) {
+            // <100
+            bill = units * 5
+            console.log(bill)
+        } else if (units > 100 && units <= 200) {
+            // 100 - 200
+            bill = 100 * 5
+            units -= 100
+            bill = bill + units * 7
+            console.log(bill)
+
+        } else {
+            bill = 100 * 5 // bill = 500
+            bill = bill + (100 * 7) // 1200
+
+            units -= 200 // 150
+            bill = bill + units * 10 // 1500+1200
+            console.log(bill)
+
+        }
+
+    </script>
+</body>
+
+</html>

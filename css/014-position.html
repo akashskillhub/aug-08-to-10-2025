@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            static
+
+            absolute
+            relative
+            fixed
+            sticky
+
+            top right bottom left
+        */
+
+        /* 
+            
+        */
+        .dummy {
+            height: 400px;
+            background-color: yellow;
+        }
+
+        .parent {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            position: relative;
+        }
+
+        .child {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+
+            /* calculate from viewport */
+            /* position: absolute; */
+
+            /* calculate from current position */
+            /* position: relative; */
+
+            /* calculate from viewport  */
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .fake {
+            height: 800px;
+            background-color: aqua;
+        }
+
+        .navbar {
+            height: 100px;
+            background-color: coral;
+            position: sticky;
+            top: 0;
+        }
+
+        .child1 {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .child2 {
+            height: 100px;
+            width: 100px;
+            background-color: brown;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dummy"></div>
+
+    <div class="parent">
+        <div class="child">child</div>
+    </div>
+
+    <div class="child2">child2</div>
+    <div class="child1">child1</div>
+
+    <div class="fake"></div>
+    <div class="navbar"></div>
+    <div class="fake">
+        <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias veniam suscipit quasi debitis. Quas at sit
+            minima modi? Quidem amet explicabo aspernatur non quaerat voluptatibus consequuntur odit in! Nemo harum
+            obcaecati odio aperiam similique dignissimos, tenetur molestiae debitis repudiandae soluta incidunt vel
+            totam a ipsa id illo illum neque quasi omnis possimus eveniet reiciendis eum ab corrupti! Rerum quo rem
+            repudiandae, neque quasi consequuntur fugit. Ipsum distinctio in eius omnis ipsam earum quod, odit ipsa
+            autem id explicabo voluptatum, assumenda suscipit soluta maxime et quis officia dolore, expedita officiis
+            tenetur similique? Modi ea error tempore accusamus quos reiciendis officia vitae?</h1>
+    </div>
+</body>
+
+</html>

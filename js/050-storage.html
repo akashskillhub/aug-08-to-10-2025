@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="addToLocal()">add</button>
+    <button onclick="getFromLocal()">get</button>
+    <button onclick="removeFromLocal()">remove</button>
+    <h1>Session storage</h1>
+
+    <button onclick="addToSession()">add</button>
+    <button onclick="getFromSession()">get</button>
+    <button onclick="removeFromSession()">remove</button>
+
+    <h1>cookie</h1>
+    <button onclick="addCookie()">add</button>
+
+    <script>
+        const addToLocal = () => {
+            localStorage.setItem("skillhub", "john doe")
+        }
+        const getFromLocal = () => {
+            const result = localStorage.getItem("skillhub")
+            console.log(result)
+        }
+        const removeFromLocal = () => {
+            localStorage.removeItem("skillhub")
+        }
+
+        const addToSession = () => {
+            sessionStorage.setItem("brand", "dell")
+        }
+        const getFromSession = () => {
+            const result = sessionStorage.getItem("brand")
+            console.log(result)
+        }
+        const removeFromSession = () => {
+            sessionStorage.removeItem("brand")
+        }
+
+        const addCookie = () => {
+            const x = new Date()
+            const result = x.getTime() + (10 * 1000)
+            x.setTime(result)
+            document.cookie = `user=apple;expires=${x.toUTCString()}`
+        }
+    </script>
+</body>
+
+</html>
