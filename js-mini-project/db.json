@@ -1,18 +1,11 @@
 {
   "notes": [
     {
-      "task": "learn js",
-      "desc": "fake desc sddfsdf ",
-      "priority": "medium",
-      "date": "2025-11-01",
-      "id": 2
-    },
-    {
       "task": "learn css",
-      "desc": "fake desc sddfsdf ",
+      "desc": "asd",
       "priority": "high",
-      "date": "2025-10-22",
-      "id": 3
+      "date": "2025-10-09",
+      "id": 1
     }
   ]
 }
