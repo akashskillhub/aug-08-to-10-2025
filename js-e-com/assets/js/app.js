@@ -1,0 +1,103 @@
+import { validate, showToast } from "./utils.js"
+const name = document.getElementById("name")
+const price = document.getElementById("price")
+const desc = document.getElementById("desc")
+const image = document.getElementById("image")
+const category = document.getElementById("category")
+const addBtn = document.getElementById("add-btn")
+const URL = "http://localhost:5000/products"
+const result = document.getElementById("result")
+
+
+addBtn.addEventListener("click", () => {
+    if (validate(name, price, desc, image, category)) {
+        createProduct()
+        readProduct()
+        reset()
+    } else {
+        console.error("All Feilds Required")
+    }
+})
+const createProduct = async () => {
+    try {
+        const productData = {
+            name: name.value,
+            price: price.value,
+            desc: desc.value,
+            image: image.value,
+            category: category.value,
+        }
+        await fetch(URL, {
+            method: "POST",
+            body: JSON.stringify(productData),
+            headers: { "Content-Type": "application/json" } // 👈 for backend
+        })
+        showToast("Product Create Success", "success")
+        console.log("Product Create Success")
+    } catch (error) {
+        console.error(error)
+    }
+}
+const readProduct = async () => {
+    try {
+        const res = await fetch(URL, { method: "GET" })
+        const data = await res.json()
+        result.innerHTML = data.map(item => `
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td><img height="100" src="${item.image}"/></td>
+                    <td>${item.desc}</td>
+                    <td>${item.category}</td>
+                    <td>
+                        <button class="btn btn-warning"> <i class="bi bi-pencil"></i> </button>
+                        <button onclick="deleteProduct(${item.id})" class="btn btn-danger"> <i class="bi bi-trash"></i> </button>
+                    </td>
+                </tr>
+            `).join("")
+
+        // Pagination
+
+
+
+
+    } catch (error) {
+        console.error(error)
+    }
+}
+const updateProduct = async () => {
+    try {
+        await fetch(URL, { method: "PATCH" })
+    } catch (error) {
+        console.error(error)
+    }
+}
+window.deleteProduct = async id => {
+    try {
+        await fetch(`${URL}/${id}`, { method: "DELETE" })
+        showToast("Product Delete Success", "danger")
+        console.log("Product Delete Success")
+        readProduct()
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+const reset = () => {
+    for (const item of [name, price, desc, image, category]) {
+        item.value = ""
+        item.classList.remove("is-valid")
+    }
+    // name.value = ""
+    // price.value = ""
+    // desc.value = ""
+    // image.value = ""
+    // category.value = ""
+    // price.classList.remove("is-valid", "is-invlid")
+    // desc.classList.remove("is-valid", "is-invlid")
+    // image.classList.remove("is-valid", "is-invlid")
+    // category.classList.remove("is-valid", "is-invlid")
+}
+
+readProduct()
