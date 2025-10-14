@@ -7,8 +7,8 @@ const category = document.getElementById("category")
 const addBtn = document.getElementById("add-btn")
 const URL = "http://localhost:5000/products"
 const result = document.getElementById("result")
-
-
+const productLimit = document.getElementById("product-limit")
+const pagi = document.getElementById("pagi")
 addBtn.addEventListener("click", () => {
     if (validate(name, price, desc, image, category)) {
         createProduct()
@@ -38,9 +38,14 @@ const createProduct = async () => {
         console.error(error)
     }
 }
-const readProduct = async () => {
+const readProduct = async (limit = 2, page = 1) => {
     try {
-        const res = await fetch(URL, { method: "GET" })
+
+
+        // const res = await fetch(URL, { method: "GET" })
+
+        //                              👇 Query String
+        const res = await fetch(`${URL}/?_limit=${limit}&_page=${page}`, { method: "GET" })
         const data = await res.json()
         result.innerHTML = data.map(item => `
                 <tr>
@@ -57,10 +62,25 @@ const readProduct = async () => {
                 </tr>
             `).join("")
 
-        // Pagination
+        //                                   👇 Only Related to Json-server
+        const totalRecord = res.headers.get("X-Total-Count")
+        const totalBtn = totalRecord / limit
+        console.log(totalRecord)
+        console.log(Math.ceil(totalBtn))
 
+        pagi.innerHTML = ""
 
+        if (page > 1) {
+            pagi.innerHTML = `<button onclick="handleBtnClick(${page - 1})"  class="btn btn-primary">pre</button>`
+        }
 
+        for (let i = 1; i <= Math.ceil(totalBtn); i++) {
+            pagi.innerHTML += `<button onclick="handleBtnClick(${i})"  class="btn btn-outline-primary">${i}</button>`
+        }
+
+        if (page < Math.ceil(totalBtn)) {
+            pagi.innerHTML += `<button onclick="handleBtnClick(${page + 1})" class="btn btn-primary">next</button>`
+        }
 
     } catch (error) {
         console.error(error)
@@ -89,15 +109,15 @@ const reset = () => {
         item.value = ""
         item.classList.remove("is-valid")
     }
-    // name.value = ""
-    // price.value = ""
-    // desc.value = ""
-    // image.value = ""
-    // category.value = ""
-    // price.classList.remove("is-valid", "is-invlid")
-    // desc.classList.remove("is-valid", "is-invlid")
-    // image.classList.remove("is-valid", "is-invlid")
-    // category.classList.remove("is-valid", "is-invlid")
+}
+
+//                              👇 Event
+productLimit.addEventListener("change", () => {
+    readProduct(productLimit.value)
+})
+
+window.handleBtnClick = index => {
+    readProduct(productLimit.value, index)
 }
 
 readProduct()
