@@ -3,16 +3,43 @@ import { showToast } from "./utils.js"
 const home = document.getElementById("home")
 const URL = "http://localhost:5000"
 const count = document.getElementById("count")
-
-const getAllProducts = async () => {
+const productLimit = document.getElementById("product-limit")
+const pagi = document.getElementById("pagi")
+const getAllProducts = async (limit = 2, page = 1) => {
     try {
-        const res = await fetch(`${URL}/products`, { method: "GET" })
+        const res = await fetch(`${URL}/products/?_limit=${limit}&_page=${page}`, { method: "GET" })
         const data = await res.json()
+        const totalRecord = res.headers.get("X-Total-Count") // 10
+        const totalBtn = Math.ceil(totalRecord / limit) // 5
+        pagi.innerHTML = ""
+
+        if (page > 1) {
+            pagi.innerHTML += `<button  onclick="handlePagination(${page - 1})" class="btn btn-sm btn-outline-primary">Pre</button>`
+        }
+
+        for (let i = 1; i <= totalBtn; i++) {
+            // if (page === i) {
+            //     pagi.innerHTML += `<button onclick="handlePagination(${i})" class="btn btn-sm btn-primary">${i}</button>`
+            // } else {
+            //     pagi.innerHTML += `<button onclick="handlePagination(${i})" class="btn btn-sm btn-outline-primary">${i}</button>`
+            // }
+
+            page === i
+                ? pagi.innerHTML += `<button onclick="handlePagination(${i})" class="btn btn-sm btn-primary">${i}</button>`
+                : pagi.innerHTML += `<button onclick="handlePagination(${i})" class="btn btn-sm btn-outline-primary">${i}</button>`
+
+        }
+
+        if (page < totalBtn) {
+            pagi.innerHTML += `<button onclick="handlePagination(${page + 1})" class="btn btn-sm btn-outline-primary">Next</button>`
+        }
+
         home.innerHTML = data.map(item => `
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
                         <img src="${item.image}" class="img-fluid" alt="">
+                        <h6>${item.id}</h6>
                         <h6>${item.name}</h6>
                         <div>${item.price}</div>
                         <div>${item.desc}</div>
@@ -117,6 +144,14 @@ window.removeFromCart = async id => {
     } catch (error) {
         console.error(error)
     }
+}
+
+productLimit.addEventListener("change", () => {
+    getAllProducts(productLimit.value)
+})
+
+window.handlePagination = index => {
+    getAllProducts(productLimit.value, index)
 }
 
 displayCart()

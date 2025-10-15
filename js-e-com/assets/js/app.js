@@ -9,6 +9,10 @@ const URL = "http://localhost:5000/products"
 const result = document.getElementById("result")
 const productLimit = document.getElementById("product-limit")
 const pagi = document.getElementById("pagi")
+
+const updateBtn = document.getElementById("update-btn")
+let selectedId
+
 addBtn.addEventListener("click", () => {
     if (validate(name, price, desc, image, category)) {
         createProduct()
@@ -56,7 +60,7 @@ const readProduct = async (limit = 2, page = 1) => {
                     <td>${item.desc}</td>
                     <td>${item.category}</td>
                     <td>
-                        <button class="btn btn-warning"> <i class="bi bi-pencil"></i> </button>
+                        <button onclick="handleEdit('${item.name}','${item.price}', '${item.desc}', '${item.image}', '${item.category}', '${item.id}')" class="btn btn-warning"> <i class="bi bi-pencil"></i> </button>
                         <button onclick="deleteProduct(${item.id})" class="btn btn-danger"> <i class="bi bi-trash"></i> </button>
                     </td>
                 </tr>
@@ -88,7 +92,22 @@ const readProduct = async (limit = 2, page = 1) => {
 }
 const updateProduct = async () => {
     try {
-        await fetch(URL, { method: "PATCH" })
+        const productData = {
+            name: name.value,
+            price: price.value,
+            desc: desc.value,
+            image: image.value,
+            category: category.value,
+        }
+        await fetch(`${URL}/${selectedId}`, {
+            method: "PATCH",
+            body: JSON.stringify(productData),
+            headers: { "Content-Type": "application/json" }
+        })
+        readProduct()
+        reset()
+        updateBtn.classList.add("d-none")
+        addBtn.classList.remove("d-none")
     } catch (error) {
         console.error(error)
     }
@@ -119,5 +138,19 @@ productLimit.addEventListener("change", () => {
 window.handleBtnClick = index => {
     readProduct(productLimit.value, index)
 }
+
+window.handleEdit = (ename, eprice, edec, eimage, ecategory, eid) => {
+    name.value = ename
+    price.value = eprice
+    desc.value = edec
+    image.value = eimage
+    category.value = ecategory
+    addBtn.classList.add('d-none')
+    updateBtn.classList.remove('d-none')
+    selectedId = eid
+}
+updateBtn.addEventListener("click", () => {
+    updateProduct()
+})
 
 readProduct()
