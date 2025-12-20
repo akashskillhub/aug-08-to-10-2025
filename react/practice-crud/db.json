@@ -1,0 +1,12 @@
+{
+  "products": [
+    {
+      "name": "aa",
+      "price": 33,
+      "desc": "asdasd",
+      "category": "clothing",
+      "stock": 123,
+      "id": 1
+    }
+  ]
+}

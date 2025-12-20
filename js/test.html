@@ -9,12 +9,18 @@
 
 <body>
     <script>
-        const x = [10, 20, 30]
-        const y = [...x] // shalow
-        y.push(40)
-        console.log(y) // [10,20,30,40]
+        // const arr = [1, 2, 3]
+        const arr = [
+            { name: "ross", age: 20 }, // XYZ
+            { name: "kate", age: 22 }, // PQR
+        ] // ABC
+        // const x = [...arr] // CDF // shalow copy [XYZ,PQR]
+        const x = JSON.parse(JSON.stringify(arr)) // CDF deep copy [WWW,QQQ]
+        // const x = arr
+        // x.push({ name: "ethan", age: 25 })
+        x[0].name = "ETHAN"
         console.log(x)
-
+        console.log(arr)
 
     </script>
 </body>

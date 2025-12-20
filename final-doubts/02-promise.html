@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // callback
+        // promise
+
+        // const demo = (arg) => {
+        //     // api call
+        //     return arg(fake)
+        // }
+        // const test = (arg) => {
+        //     return arg("dell")
+        // }
+        // const fake = (arg) => {
+        //     return arg
+        // }
+
+        // const x = demo(test)
+
+        //           👇class    👇 function
+        const x = new Promise((resolve, reject) => {
+            // database opration
+            resolve()
+            // reject()
+        })
+
+        const handleSuccess = () => console.log("success")
+        const handleFail = () => console.log("fail")
+
+        console.log("start")
+        x.then(handleSuccess).catch(handleFail)
+        console.log("end")
+
+
+        const handlePromise = async () => {
+            try {
+                await x
+                console.warn("success")
+
+            } catch (error) {
+                console.warn("FAIl")
+            }
+        }
+        handlePromise()
+
+
+
+
+
+        // 3 state
+        // success resolve()
+        // pending
+        // fail reject()
+
+    </script>
+</body>
+
+</html>

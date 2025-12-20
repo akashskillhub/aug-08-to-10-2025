@@ -44,9 +44,10 @@
         }
 
         const addCookie = () => {
-            const x = new Date()
-            const result = x.getTime() + (10 * 1000)
-            x.setTime(result)
+            const x = new Date() // date
+            // 123313131321
+            const result = x.getTime() + (10 * 1000) // time
+            x.setTime(result) // date + time
             document.cookie = `user=apple;expires=${x.toUTCString()}`
         }
     </script>

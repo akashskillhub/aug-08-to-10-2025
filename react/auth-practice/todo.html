@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Json Server Auth Checklist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>React Project Setup Checklist</h1>
+
+    <div id="checklist"></div>
+
+    <script>
+        const items = [
+            'Setup a new React project (Vite or CRA)',
+            'Install Bootstrap via CDN or npm',
+            'Create pages: Register.jsx, Login.jsx, Dashboard.jsx',
+            'Create Navbar.jsx component',
+            'Create shared/utility.js with handleClasses function',
+            'Install react-router-dom',
+            'Setup routes: /, /login, /admin',
+            'Create Register form using Formik & Yup',
+            'Create Login form using Formik & Yup',
+            'Create db.json with "users":[] and start json server',
+            'Create handleRegister using axios.post to http://localhost:5000/users',
+            'Show toast and redirect to login page',
+            'Create handleLogin using axios.get with params',
+            'Show invalid credentials message if empty response',
+            'Toast login success and navigate to /admin',
+            'Save logged-in user to localStorage',
+            'Create Bootstrap navbar with dropdown',
+            'Show Welcome & username',
+            'Add Logout option',
+            'Create AuthContext and share auth state',
+            'Create Protected.jsx component',
+            'Wrap /admin route with <Protected><Dashboard /></Protected>',
+            'Clear auth state on logout',
+            'Remove localStorage value on logout',
+            'Restore auth from localStorage on page load'
+        ];
+
+        const checklistEl = document.getElementById('checklist');
+
+        function loadChecklist() {
+            const saved = JSON.parse(localStorage.getItem('reactChecklist')) || {};
+            checklistEl.innerHTML = '';
+
+            items.forEach((text, index) => {
+                const div = document.createElement('div');
+                div.style.marginBottom = '8px';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = saved[index] || false;
+                checkbox.onchange = () => saveState(index, checkbox.checked);
+
+                const label = document.createElement('label');
+                label.style.marginLeft = '8px';
+                label.textContent = text;
+
+                div.appendChild(checkbox);
+                div.appendChild(label);
+                checklistEl.appendChild(div);
+            });
+        }
+
+        function saveState(index, value) {
+            const saved = JSON.parse(localStorage.getItem('reactChecklist')) || {};
+            saved[index] = value;
+            localStorage.setItem('reactChecklist', JSON.stringify(saved));
+        }
+
+        loadChecklist();
+    </script>
+</body>
+
+</html>

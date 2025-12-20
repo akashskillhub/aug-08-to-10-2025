@@ -1,0 +1,21 @@
+{
+  "products": [
+    {
+      "title": "fake product",
+      "price": "50000",
+      "desc": "fake desc",
+      "hero": "https://images.unsplash.com/photo-1682695795557-17447f921f79?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "publish": true,
+      "id": 1
+    },
+    {
+      "title": "fake product",
+      "price": "50000",
+      "desc": "fake desc",
+      "hero": "https://images.unsplash.com/photo-1682695795557-17447f921f79?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "publish": true,
+      "id": 2
+    }
+  ],
+  "cart": []
+}

@@ -1,0 +1,6 @@
+<!-- data storage  -->
+<!-- data communications  -->
+<Money>
+    <User name="john"></User>
+    <Amount>100</Amount>
+</Money>

@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "name": "john",
+      "email": "john@gmail.com",
+      "mobile": "8888888888",
+      "profile": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "type": "frontend",
+      "password": "john@123",
+      "role": "employee",
+      "active": true,
+      "id": 2
+    },
+    {
+      "name": "kate",
+      "email": "kate@gmail.com",
+      "mobile": "9284123374",
+      "profile": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "type": "backend",
+      "password": "kate@123",
+      "role": "employee",
+      "active": true,
+      "id": 3
+    },
+    {
+      "name": "ross",
+      "email": "ross@gmail.com",
+      "mobile": "8989898998",
+      "profile": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "type": "devops",
+      "password": "ross@123",
+      "role": "employee",
+      "active": true,
+      "id": 4
+    }
+  ],
+  "todos": [
+    {
+      "task": "Lear Redux",
+      "desc": "faqke desc",
+      "priority": "high",
+      "emp": "4",
+      "complete": true,
+      "id": 1
+    },
+    {
+      "task": "tewst",
+      "desc": "asdasdasd",
+      "priority": "low",
+      "emp": "2",
+      "complete": false,
+      "id": 2
+    }
+  ]
+}

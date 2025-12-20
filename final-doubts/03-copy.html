@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x = 10
+        let y = x
+        y = 30
+        console.log(y) // 30
+        console.log(x) // 30
+
+        const a = ["dell", "hp"]
+        const b = { brands: a }
+        // const c = { ...b }
+        // const c = structuredClone(b)
+        const c = JSON.parse(JSON.stringify(b))
+        c.brands.push("apple")
+        console.log(a)
+        console.log(b)
+        console.log(c)
+
+
+
+
+
+
+        // const arr = [{ country: "india" }, { country: "usa" }] // 33 [11,22]
+        // // const x = [...arr] // 44 [11,22]  Shalow copy
+        // const x = JSON.parse(JSON.stringify(arr)) // deep copy  // 55 [X1,X2]
+
+        // console.log("arr", arr)
+        // console.log("x", x)
+
+        // x[0].country = "canada"
+        // console.log(x)
+        // console.log(arr)
+
+
+
+
+    </script>
+</body>
+
+</html>

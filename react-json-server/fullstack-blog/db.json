@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "name": "akash",
+      "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "email": "akash@gmail.com",
+      "password": "123",
+      "cpassword": "123",
+      "role": "auther",
+      "active": true,
+      "id": 2
+    },
+    {
+      "name": "Ross Galler",
+      "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "email": "ross@gmail.com",
+      "password": "123",
+      "cpassword": "123",
+      "role": "auther",
+      "active": false,
+      "id": 3
+    }
+  ],
+  "blogs": [
+    {
+      "title": "test blog",
+      "desc": "sdfsdf sd fsed  ",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "publish": true,
+      "id": 1
+    },
+    {
+      "title": "kkkk",
+      "desc": "hgfghfghgfh",
+      "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/z/w/w/-original-imah4zp8pf2uehv4.jpeg?q=70",
+      "publish": true,
+      "auther": 2,
+      "id": 2
+    },
+    {
+      "title": "rwere",
+      "desc": "dsfgdfgfd",
+      "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/f/y/e/-original-imah4jykc3knhq3b.jpeg?q=70",
+      "publish": false,
+      "auther": 2,
+      "id": 3
+    }
+  ]
+}

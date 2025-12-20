@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const arr = [10, 20, 30]
+        // const [x, y, z] = arr
+
+        // const obj = { name: "john", age: 25 }
+
+        // //          👇rename
+        // const { age: test } = obj
+        // console.log(test)
+
+        //         👇 new array
+        // const arr = [10, 20, 30] // X123
+        // const x = arr // X123
+        // console.log("x", x)
+        // console.log("arr", arr)
+
+        // const y = [...arr] // X456
+        // console.log("y", y)
+
+        // console.log("after")
+        // x.push(40)
+        // console.log("x", x)
+        // console.log("arr", arr)
+        // console.log("y", y)
+
+        // console.clear()
+        // const obj = { name: 'ross', age: 20, name: "hp" }
+        // // const o = obj
+        // const o = { ...obj }
+        // o.name = "ethan"
+        // console.log("o", o)
+        // console.log("obj", obj)
+
+
+        const arr = [10, 20, 30]
+        //        👇new array
+        const [x, ...y] = arr
+        console.log(y)
+
+        const obj = { name: "ross", age: 20 }
+        const { name, ...p } = obj
+        console.log(p)
+
+        const demo = (...n1) => {
+            console.log(n1)
+
+        }
+        demo(10, 20)
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

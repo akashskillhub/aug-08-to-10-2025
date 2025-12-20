@@ -1,5 +1,20 @@
 {
-  "cart": [],
+  "cart": [
+    {
+      "pid": "1",
+      "name": "Iphone fffff",
+      "price": "75000",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": 1
+    },
+    {
+      "pid": "2",
+      "name": "Galaxy S24 Ultra",
+      "price": "90000",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": 2
+    }
+  ],
   "products": [
     {
       "name": "Iphone fffff",
