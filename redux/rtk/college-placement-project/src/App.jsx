@@ -11,9 +11,11 @@ import CompanyApplication from "./pages/company/CompanyApplication"
 import StudentLayout from "./components/student/StudentLayout"
 import StudentProfile from "./pages/student/StudentProfile"
 import StudentJobs from "./pages/student/StudentJobs"
-
+import { ToastContainer } from "react-toastify"
+import "react-toastify/ReactToastify.css"
 const App = () => {
   return <>
+    <ToastContainer />
     <BrowserRouter>
       <Routes>
         {/* public pages */}

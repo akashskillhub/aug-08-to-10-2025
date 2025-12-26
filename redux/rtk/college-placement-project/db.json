@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "tpo",
+      "email": "tpo@gmail.com",
+      "password": "123",
+      "role": "tpo"
+    },
+    {
+      "name": "SKILLHUB",
+      "email": "skillhubitsolution@gmail.com",
+      "logo": "https://www.skillhubdev.com/skillhub-dark.svg",
+      "address": "kranti chowk",
+      "mobile": 9284123374,
+      "password": "123",
+      "role": "company",
+      "id": 5,
+      "active": true
+    },
+    {
+      "name": "ethan",
+      "email": "ethan@gmail.com",
+      "mobile": 9284123374,
+      "education": "btech",
+      "skills": "html,css,js,react",
+      "role": "student",
+      "password": "ethan@123",
+      "id": 6
+    }
+  ],
+  "jobs": [
+    {
+      "title": "jr frontend developer",
+      "desc": "React and Nextjs Developer",
+      "skills": "html,css,js,react",
+      "salary": "25000",
+      "experice": "0",
+      "location": "pune",
+      "type": "fulltime",
+      "publish": true,
+      "company": 5,
+      "id": 2
+    },
+    {
+      "title": "jr backend developer",
+      "desc": "Node js Developer",
+      "skills": "html,css,js,react",
+      "salary": "35000",
+      "experice": 1,
+      "location": "pune",
+      "type": "fulltime",
+      "publish": true,
+      "company": 5,
+      "id": 3
+    }
+  ],
+  "applications": []
+}

@@ -1,7 +1,11 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { logout } from '../../redux/slices/auth.slice'
 
 const AdminNavbar = () => {
+    const { tpo } = useSelector(state => state.auth)
+    const dispatch = useDispatch()
     return <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
         <div className="container">
             <Link to="/admin" className="navbar-brand">Admin Panel</Link>
@@ -18,12 +22,12 @@ const AdminNavbar = () => {
 
             <div class="dropdown">
                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
-                    Welcome
+                    Welcome {tpo.name}
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><button class="dropdown-item text-danger">Logout</button></li>
+                    <li><button onClick={e => dispatch(logout("tpo"))} class="dropdown-item text-danger">Logout</button></li>
                 </ul>
             </div>
         </div>
