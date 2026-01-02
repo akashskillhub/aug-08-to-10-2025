@@ -7,12 +7,13 @@ import { toast } from 'react-toastify'
 import { useSelector } from 'react-redux'
 
 const CompanyJobs = () => {
-    const { data } = useCompanyJobQuery()
+    const { company } = useSelector(state => state.auth)
+
+    const { data } = useCompanyJobQuery(company.id)
     const [createJob] = useCreateJobMutation()
     const [updateJob] = useUpdateJobMutation()
     const [deleteJob] = useDeleteJobMutation()
 
-    const { company } = useSelector(state => state.auth)
 
     const fields = [
         { label: "title", placeholder: "enter title", type: "text", },

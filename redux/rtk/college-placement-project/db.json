@@ -27,6 +27,26 @@
       "role": "student",
       "password": "ethan@123",
       "id": 6
+    },
+    {
+      "name": "Google",
+      "email": "google@gmail.com",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/250px-Google_2015_logo.svg.png",
+      "address": "new york",
+      "mobile": 8899887744,
+      "password": "123",
+      "role": "company",
+      "id": 7
+    },
+    {
+      "name": "john",
+      "email": "john@gmail.com",
+      "mobile": 9284123374,
+      "education": "btech",
+      "skills": "html,css,js,angular",
+      "role": "student",
+      "password": "john@123",
+      "id": 8
     }
   ],
   "jobs": [
@@ -53,7 +73,68 @@
       "publish": true,
       "company": 5,
       "id": 3
+    },
+    {
+      "title": "jr fullstack developer",
+      "desc": "Angular Developer",
+      "skills": "html,css,js,angular",
+      "salary": "25000",
+      "experice": "0",
+      "location": "pune",
+      "type": "fulltime",
+      "publish": true,
+      "company": 7,
+      "id": 4
+    },
+    {
+      "title": "Golang developer",
+      "desc": "Golang Developer",
+      "skills": "Golang",
+      "salary": "55000",
+      "experice": "0",
+      "location": "pune",
+      "type": "fulltime",
+      "publish": true,
+      "company": 7,
+      "id": 5
     }
   ],
-  "applications": []
+  "applications": [
+    {
+      "sid": 6,
+      "jid": 4,
+      "status": "pending",
+      "id": 1
+    },
+    {
+      "sid": 6,
+      "jid": 3,
+      "status": "pending",
+      "id": 2
+    },
+    {
+      "sid": 6,
+      "jid": 2,
+      "status": "hire",
+      "id": 3
+    },
+    {
+      "sid": 8,
+      "jid": 2,
+      "status": "hire",
+      "id": 4
+    },
+    {
+      "sid": 8,
+      "jid": 5,
+      "status": "pending",
+      "id": 5
+    },
+    {
+      "sid": 8,
+      "jid": 3,
+      "status": "reject",
+      "id": 6
+    }
+  ]
 }

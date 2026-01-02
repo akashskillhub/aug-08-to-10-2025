@@ -1,17 +1,15 @@
 const data = [
-    { id: 1, title: "react", comapny: 5 },
-    { id: 2, title: "node", comapny: 5 },
-    { id: 3, title: "python", comapny: 6 },
+    { id: 5, title: "react", comapny: 5 },
+    { id: 6, title: "node", comapny: 5 },
+    { id: 7, title: "python", comapny: 6 },
 ]
-const companyData = [
-    { id: 5, name: "SKILLHUB" },
-    { id: 6, name: "GOOGLE" },
+const applicationData = [
+    { sid: 1, jid: 5 },
+    { sid: 1, jid: 6 },
 ]
+const student = { id: 1, name: 'ethan' }
 
-const getCompany = id => {
-    const z = companyData.find(item => item.id === id)
-    return z.name
-}
 
-const x = data.map(item => `${item.title} ${item.comapny} ${getCompany(item.comapny)}`)
-console.log(x)
+const isApplied = applicationData.find(item => item.sid === student.id && item.jid === item.id)
+
+console.log(isApplied)
