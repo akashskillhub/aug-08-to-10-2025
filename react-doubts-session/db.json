@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "john",
+      "email": "john@gmail.com",
+      "password": "123"
+    }
+  ],
+  "notes": [
+    {
+      "task": "learn css",
+      "desc": "sdfsdf",
+      "priority": "medium",
+      "complete": false,
+      "id": 1
+    },
+    {
+      "task": "learn html",
+      "desc": "asdasd",
+      "priority": "medium",
+      "complete": false,
+      "id": 2
+    },
+    {
+      "task": "Learn Pagination",
+      "desc": "pagination",
+      "priority": "high",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "task": "Learn Pagination",
+      "desc": "pagination",
+      "priority": "high",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "task": "Learn Pagination",
+      "desc": "pagination",
+      "priority": "high",
+      "complete": false,
+      "id": 5
+    },
+    {
+      "task": "Learn Pagination",
+      "desc": "pagination",
+      "priority": "high",
+      "complete": false,
+      "id": 6
+    },
+    {
+      "task": "Learn Pagination",
+      "desc": "pagination",
+      "priority": "high",
+      "complete": false,
+      "id": 7
+    },
+    {
+      "task": "Learn Pagination",
+      "desc": "pagination",
+      "priority": "high",
+      "complete": false,
+      "id": 8
+    },
+    {
+      "task": "Learn Pagination",
+      "desc": "pagination",
+      "priority": "high",
+      "complete": false,
+      "id": 9
+    },
+    {
+      "task": "Learn Pagination",
+      "desc": "pagination",
+      "priority": "high",
+      "complete": false,
+      "id": 10
+    }
+  ]
+}
