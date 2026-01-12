@@ -9,6 +9,9 @@ const RbAlert = lazy(() => import("./../pages/RbAlert"))
 const RbCard = lazy(() => import("./../pages/RbCard"))
 const RbModal = lazy(() => import("./../pages/RbModal"))
 const RbOffcanvas = lazy(() => import("./../pages/RbOffcanvas"))
+const RbCarousel = lazy(() => import("./../pages/RbCarousel"))
+const Rbgrid = lazy(() => import("./../pages/Rbgrid"))
+const Rbform = lazy(() => import("./../pages/Rbform"))
 
 export const publicRoutes = [
     { label: "Home", path: "/", element: <Home /> },
@@ -18,6 +21,9 @@ export const publicRoutes = [
     { label: "card", path: "/card", element: <RbCard /> },
     { label: "modal", path: "/modal", element: <RbModal /> },
     { label: "offcanvas", path: "/offcanvas", element: <RbOffcanvas /> },
+    { label: "carousel", path: "/carousel", element: <RbCarousel /> },
+    { label: "grid", path: "/grid", element: <Rbgrid /> },
+    { label: "form", path: "/form", element: <Rbform /> },
 ]
 
 const AppRoutes = () => {
