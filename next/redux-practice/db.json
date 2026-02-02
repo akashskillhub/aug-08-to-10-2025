@@ -1,0 +1,22 @@
+{
+  "notes": [
+    {
+      "task": "learn css",
+      "desc": "sdfsdf",
+      "priority": "high",
+      "id": 1
+    },
+    {
+      "task": "learn js",
+      "desc": "sdfsdf",
+      "priority": "low",
+      "id": 2
+    },
+    {
+      "task": "asd",
+      "desc": "fake desc sddfsdf ",
+      "priority": "medium",
+      "id": 3
+    }
+  ]
+}
