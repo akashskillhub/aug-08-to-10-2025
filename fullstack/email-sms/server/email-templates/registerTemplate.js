@@ -1,0 +1,13 @@
+const { baseTemplate } = require("./baseTemplate")
+
+exports.registerTemplate = ({ name }) => {
+    const content = `
+        <h2>Welcome to SKILLHUB</h2>
+        <p> Hi,${name} </p>
+        <p> Thank you for choosing SKILLHUB. </p>
+    `
+    return baseTemplate({
+        title: "welcome to SKILLHUB",
+        content
+    })
+}

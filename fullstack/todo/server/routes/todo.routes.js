@@ -1,10 +1,12 @@
 const { readTodo, createTodo, updateTodo, deleteTodo } = require("../controllers/todo.controller.js")
+const logger = require("../middlewares/logger.js")
+const protect = require("../middlewares/protect.js")
 
 const router = require("express").Router()
 
 router
-    .get("/", readTodo)
-    .post("/create", createTodo)
+    .get("/", logger, readTodo)
+    .post("/create", logger, createTodo)
     .patch("/modify/:todoId", updateTodo)
     .delete("/remove/:todoId", deleteTodo)
 
