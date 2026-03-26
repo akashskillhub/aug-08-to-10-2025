@@ -1,0 +1,59 @@
+-- CREATE TABLE users (
+--     id INT,
+--     name VARCHAR(50),
+--     city VARCHAR(50),
+--     education VARCHAR(50),
+--     salary INT,
+--     active BOOLEAN
+-- );
+
+-- INSERT INTO users (id, name, city, education, salary, active) VALUES
+-- (1, 'Amit', 'Mumbai', 'B.Tech', 50000, true),
+-- (2, 'Neha', 'Pune', 'MBA', 60000, true),
+-- (3, 'Rahul', 'Delhi', 'BCA', 40000, false),
+-- (4, 'Sneha', 'Mumbai', 'MCA', 55000, true),
+-- (5, 'Vikas', 'Bangalore', 'B.Tech', 70000, true),
+-- (6, 'Pooja', 'Hyderabad', 'MBA', 65000, false),
+-- (7, 'Arjun', 'Chennai', 'B.Sc', 30000, true),
+-- (8, 'Kiran', 'Pune', 'B.Tech', 52000, true),
+-- (9, 'Rohit', 'Mumbai', 'MBA', 80000, false),
+-- (10, 'Anjali', 'Delhi', 'BCA', 45000, true),
+-- (11, 'Suresh', 'Nagpur', 'Diploma', 25000, true),
+-- (12, 'Meena', 'Pune', 'MCA', 62000, false),
+-- (13, 'Akash', 'Mumbai', 'B.Tech', 90000, true),
+-- (14, 'Priya', 'Bangalore', 'MBA', 75000, true),
+-- (15, 'Deepak', 'Hyderabad', 'BCA', 38000, false),
+-- (16, 'Kavita', 'Delhi', 'M.Sc', 58000, true),
+-- (17, 'Nikhil', 'Chennai', 'B.Tech', 67000, true),
+-- (18, 'Swati', 'Mumbai', 'MBA', 72000, false),
+-- (19, 'Manish', 'Pune', 'B.Sc', 31000, true),
+-- (20, 'Ritika', 'Nagpur', 'MCA', 60000, true),
+-- (21, 'Tarun', 'Bangalore', 'Diploma', 28000, false),
+-- (22, 'Divya', 'Hyderabad', 'B.Tech', 85000, true),
+-- (23, 'Yash', 'Delhi', 'MBA', 77000, true),
+-- (24, 'Komal', 'Mumbai', 'BCA', 43000, false),
+-- (25, 'Gaurav', 'Pune', 'B.Tech', 68000, true);
+
+
+
+-- 1. Get all users
+-- 2. Get all active users
+-- 3. Get users from Pune
+-- 4. Get users with salary greater than 70000
+-- 5. Get users who are active and from Mumbai
+-- 6. Get users with education = 'B.Tech'
+-- 7. Get users with education = 'BCA'
+-- 8. Get users who are active AND from Mumbai AND have salary greater than 50000
+-- 9. Get users with salary less than or equal to 40000
+-- 10. Get users from Delhi
+-- 11. Get users whose name is 'Amit'
+-- 12. Get users where education is not 'MBA'
+-- 13. Get users with salary between 40000 and 70000
+-- 14. Get users from Mumbai
+-- 15. Get users with salary greater than or equal to 60000
+-- 16. Get all inactive users
+-- 17. Get users with salary equal to 60000
+-- 18. Get users where city is not 'Pune'
+-- 19. Get users with salary less than 50000
+-- 20. Get users who are active and have salary less than 50000
+-- 21. Get users with education = 'MBA'
